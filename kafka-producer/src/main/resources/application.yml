@@ -1,0 +1,23 @@
+server:
+  port: 2021
+
+bootstrap:
+  server:
+    port: localhost:9092
+
+topic:
+  name: sa-transaction-topic
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: jay
+    password: jay
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.Oracle10gDialect
