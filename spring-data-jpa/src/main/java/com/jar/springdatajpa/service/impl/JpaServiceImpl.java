@@ -27,6 +27,9 @@ public class JpaServiceImpl implements JpaService {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private NativeModelRepository nativeModelRepository;
+
     @Override
     public void processOneToOne() {
         saveStudentOneToOne();
@@ -109,6 +112,12 @@ public class JpaServiceImpl implements JpaService {
         fetchProductManyToMany();
     }
 
+    @Override
+    public void processNativeQuery() {
+        System.out.println(nativeModelRepository.findNativeModel().get());
+
+    }
+
     private void fetchProductManyToMany(){
         System.out.println("Product present = " + productRepository.findById(1001).isPresent());
 
@@ -150,4 +159,5 @@ public class JpaServiceImpl implements JpaService {
         categoryRepository.save(category1);
         categoryRepository.save(category2);
     }
+
 }

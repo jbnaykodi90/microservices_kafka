@@ -34,4 +34,10 @@ public class JpaController {
         jpaService.processManyToMany();
         return "Request accepted for processManyToMany";
     }
+
+    @GetMapping("/native-query")
+    public String processNativeQuery(){
+        jpaService.processNativeQuery();
+        return "Request accepted for processNativeQuery";
+    }
 }

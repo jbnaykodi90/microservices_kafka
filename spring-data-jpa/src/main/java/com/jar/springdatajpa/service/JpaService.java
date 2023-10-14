@@ -5,4 +5,5 @@ public interface JpaService {
     public void processOneToMany();
     public void processManyToOne();
     public void processManyToMany();
+    public void processNativeQuery();
 }
