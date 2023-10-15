@@ -30,6 +30,9 @@ public class JpaServiceImpl implements JpaService {
     @Autowired
     private NativeModelRepository nativeModelRepository;
 
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
     @Override
     public void processOneToOne() {
         saveStudentOneToOne();
@@ -116,6 +119,17 @@ public class JpaServiceImpl implements JpaService {
     public void processNativeQuery() {
         System.out.println(nativeModelRepository.findNativeModel().get());
 
+    }
+
+    @Override
+    public void compositeId() {
+        Employee employee = new Employee();
+        employee.setName("Emp1");
+        EmployeeAddress employeeAddress = new EmployeeAddress();
+        employeeAddress.setId(1);
+        employeeAddress.setAddress("Address1");
+        employee.setEmployeeAddress(employeeAddress);
+        employeeRepository.save(employee);
     }
 
     private void fetchProductManyToMany(){

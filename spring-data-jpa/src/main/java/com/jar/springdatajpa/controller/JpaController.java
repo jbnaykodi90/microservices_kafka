@@ -40,4 +40,10 @@ public class JpaController {
         jpaService.processNativeQuery();
         return "Request accepted for processNativeQuery";
     }
+
+    @GetMapping("/composite-id")
+    public String compositeId(){
+        jpaService.compositeId();
+        return "Request accepted for compositeId";
+    }
 }

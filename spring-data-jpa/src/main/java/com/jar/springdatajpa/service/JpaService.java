@@ -6,4 +6,5 @@ public interface JpaService {
     public void processManyToOne();
     public void processManyToMany();
     public void processNativeQuery();
+    public void compositeId();
 }
